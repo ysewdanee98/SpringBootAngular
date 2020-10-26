@@ -1,0 +1,18 @@
+<div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #languageForm="ngForm">
+        <div class="form-group">
+          <label >Language Code</label>
+          <input type="text" [(ngModel)]="language.code"
+            class="form-control"
+            id="code"
+            name="code"
+            placeholder="Enter language code"
+            required #code="ngModel">
+          <div [hidden]="!code.pristine" class="alert alert-danger">Languade code is required</div>
+        </div>
+        <button type="submit" [disabled]="!languageForm.form.valid"
+          class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
